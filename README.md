@@ -19,6 +19,13 @@ Each of Qwen3-8B's MLP neurons (36 layers × 12,288) was pushed up (+) and down 
 
 Neuron references look like `L15 N10659 −`: layer 15, neuron 10659, suppressed (− ) or amplified (+). Detail files are about 100 KB each, small enough for most agent fetchers. Replies are the site's 220-character excerpts; the full reply is on the original site (search by layer and neuron).
 
+## Searching
+
+The same rows are a Hugging Face dataset, https://huggingface.co/datasets/willhsp/qwen-neuron-personas, which can be searched with plain GET requests that return small JSON pages:
+
+- `https://datasets-server.huggingface.co/search?dataset=willhsp/qwen-neuron-personas&config=default&split=train&query=archivist&offset=0&length=20`
+- `https://datasets-server.huggingface.co/filter?dataset=willhsp/qwen-neuron-personas&config=default&split=train&where=layer=15 AND neuron=10659&length=10`
+
 ## Fetching
 
 Use the raw URLs, for example `https://raw.githubusercontent.com/<owner>/<repo>/main/weirdest.md`, or clone the repo and grep it.
